@@ -1,7 +1,7 @@
 from math import log10
 from math import floor
 
-
+#check if number is palindrome
 def is_number_palindrome(number):
     if(number/10 == 0):
         return True
