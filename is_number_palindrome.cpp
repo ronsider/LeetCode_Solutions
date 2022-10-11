@@ -16,5 +16,4 @@ bool check_for_palindrome(int number)
 
    }
    return true;
-
-}
+}//
