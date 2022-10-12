@@ -39,7 +39,5 @@ vector<int> digits(vector<int>& number)
         
     }
     return number;
-
-
 }
 
