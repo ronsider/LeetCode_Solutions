@@ -1,5 +1,6 @@
 #include <vector>
 #include <algorithm>
+
 using std::vector;
 
 vector<int> digits(vector<int>& number)
@@ -17,7 +18,6 @@ vector<int> digits(vector<int>& number)
         number.push_back(0);
         std::reverse(number.begin(),number.end());
         bool carry{true};
-        int temp;
         for(auto it=number.rbegin();it!=number.rend();it++)
         {
             if(carry && (*it)==9)
