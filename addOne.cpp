@@ -40,3 +40,7 @@ vector<int> digits(vector<int>& number)
 }
 
 
+int main()
+{
+    
+}
