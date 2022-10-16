@@ -1,6 +1,8 @@
 #include <vector>
 #include <algorithm>
 
+
+
 using std::vector;
 
 vector<int> digits(vector<int>& number)
@@ -39,8 +41,3 @@ vector<int> digits(vector<int>& number)
     return number;
 }
 
-
-int main()
-{
-    
-}
