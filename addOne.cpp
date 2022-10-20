@@ -1,8 +1,5 @@
 #include <vector>
 #include <algorithm>
-
-
-
 using std::vector;
 
 vector<int> digits(vector<int>& number)
