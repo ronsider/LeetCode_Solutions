@@ -1,19 +1,20 @@
 #include <vector>
-    bool canJump(std::vector<int>& nums) {
-        int s{};
+    bool canJump(std::vector<int>& nums) 
+    {
+        int steps{};
 	for (int i=0;i<nums.size();i++)
 	{
-		s = (s>nums[i])?s:nums[i];
+		steps = (steps>nums[i])?steps:nums[i];
 		
-		if (i != nums.size()-1 && s == 0)
+		if (i != nums.size()-1 && steps == 0)
 		{
 			return false;
 		}
-		if (s >= 0 && i == nums.size() - 1)
+		if (steps >= 0 && i == nums.size() - 1)
 		{
 			return true;
 		}
-		s--;
+		steps--;
 				
 	}
 	return false;        
