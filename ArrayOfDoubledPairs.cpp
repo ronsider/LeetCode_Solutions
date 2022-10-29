@@ -3,7 +3,8 @@
 #include <algorithm>
 using std::unordered_map;
 using std::vector;
-bool canReorderDoubled(vector<int>& arr) {
+bool canReorderDoubled(vector<int>& arr) 
+{
         
         unordered_map<int, int> count;
 
@@ -22,6 +23,5 @@ bool canReorderDoubled(vector<int>& arr) {
       --count[2 * a];
     }
 
-    return true;
-        
+    return true;     
     }
