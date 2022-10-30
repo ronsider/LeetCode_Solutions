@@ -9,6 +9,12 @@ void remove_duplicates(vector<int>& numbers)
     numbers.erase(it,numbers.end());
 }
 
+//** add pure implementation: **/
+void remove_duplicate_pure(vector<int>& numbers)
+{
+
+}
+
 int main()
 {
     vector<int>numbers{1,2,2,3,4,4,5,6,7,7,8};
