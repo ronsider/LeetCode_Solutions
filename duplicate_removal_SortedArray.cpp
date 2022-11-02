@@ -31,7 +31,7 @@ void remove_duplicate_pure(vector<int>& numbers)
     }
 
 }
-
+//main function to test functionality
 int main()
 {
     vector<int>numbers{1,2,2,3,4,4,5,6,7,7,8};
