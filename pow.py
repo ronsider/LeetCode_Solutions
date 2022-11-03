@@ -1,3 +1,4 @@
+#calculate the power of number.n is base and e is the exponent
 def power(n, e):
     if e == 0:
         return 1
