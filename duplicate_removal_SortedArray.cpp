@@ -20,7 +20,7 @@ void remove_duplicate_pure(vector<int>& numbers)
             temp=i+1;
             while(numbers[i]==numbers[temp])
             {
-                numbers[temp]=-999;
+                numbers[temp]=-9999;
                 temp++;
             }
         }
