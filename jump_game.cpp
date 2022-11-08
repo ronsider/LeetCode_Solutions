@@ -1,7 +1,7 @@
 #include <vector>
     bool canJump(std::vector<int>& nums) 
     {
-        int steps{};
+        int steps{0};
 	for (int i=0;i<nums.size();i++)
 	{
 		steps = (steps>nums[i])?steps:nums[i];
