@@ -9,8 +9,9 @@ std::optional<std::pair<size_t,size_t>> find_first_pair(const std::vector<int>nu
     }
     return {};
 }
-    int maxProfit(std::vector<int>& prices) {
-        auto t=find_first_pair(prices);
+int maxProfit(std::vector<int>& prices) 
+{
+    auto t=find_first_pair(prices);
     if(!t.has_value())
     {
         return 0;
@@ -38,6 +39,5 @@ std::optional<std::pair<size_t,size_t>> find_first_pair(const std::vector<int>nu
         }
         
     }
-    return differnce;
-        
+    return differnce;       
     }
