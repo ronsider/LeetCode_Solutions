@@ -18,8 +18,6 @@ std::optional<std::pair<size_t,size_t>> find_first_pair(const std::vector<int>nu
     auto first_min=t->first;
     auto first_max=t->second;
     int differnce=prices[first_max]-prices[first_min];
-    int second_min{};
-    int second_max{};
 
     for(int i=first_min+1;i<prices.size();i++)
     {
