@@ -1,7 +1,5 @@
 #include <algorithm>
 #include <vector>
-//#include <iostream>
-//using std::cout;
 using std::vector;
 
 void reorder(std::vector<int>& numbers)
