@@ -4,12 +4,13 @@
 //using std::cout;
 using std::vector;
 
-std::vector<int> reorder(std::vector<int>& numbers)
+void reorder(std::vector<int>& numbers)
 {  
-    std::sort(numbers.begin(),numbers.end());
-    for(size_t i=1;i<numbers.size()-1;i+=2)
+     for(size_t i=1;i<numbers.size();i++)
     {
-        std::swap(numbers[i],numbers[i+1]);
+        if((!(i%2) && numbers[i-1]<numbers[i]) || ((i%2) && numbers[i-1]>numbers[i]))
+        {
+            std::swap(numbers[i-1],numbers[i]);
+        }
     }
-    return numbers;
 }
