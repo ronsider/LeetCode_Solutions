@@ -41,5 +41,5 @@ int maxProfit(std::vector<int>& prices)
     }
     return differnce;       
     }
-    //best time ti buy and sell stocks
+    //best time to buy and sell stocks
     
