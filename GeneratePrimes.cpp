@@ -45,3 +45,12 @@ vector<int>prime_numbers(const int number)
     }
 
 }
+
+int main()
+{
+    vector<int>numbers=prime_numbers(91);
+    for(const auto& i:numbers)
+    {
+        std::cout<<i<<" ";
+    }
+}
