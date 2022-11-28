@@ -1,12 +1,25 @@
-#include <vector>
-using std::vector;
-vector<char> apply_permutation(const vector<int>& perm,const vector<char>& letters)
+#include <array>
+#include <span>
+using std::array;
+
+void permutation(std::span<int> perm, std::span<char> letters)
 {
-    vector<char>result;
-    result.resize(letters.size());
-    for(size_t i=0;i<perm.size();i++)
+    for (size_t i = 0; i < perm.size(); i++)
     {
-        result[perm[i]]=letters[i];
+        if (perm[i] == i)
+            continue;
+        std::swap(letters[i], letters[perm[i]]);
+        std::swap(perm[i], perm[perm[i]]);
+        i = 0;
     }
-    return result;
+    //return letters;
+
+
+}
+
+int main()
+{
+    std::array<int,5>perm{ 3,4,2,1,0 };
+    std::array<char,5>l{ 'a','b','c','d','e' };
+    permutation(perm, l);
 }
