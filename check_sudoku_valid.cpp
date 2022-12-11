@@ -42,9 +42,25 @@ constexpr bool check_lines(const array<array<int,9>,9>& board)
     return true;
 }
 
-constexpr bool check_sudoku()
+constexpr bool check_columns(const array<array<int,9>,9>& board)
 {
-
+    std::array<int,9>numbers{ 0,0,0,0,0,0,0,0,0};
+    for(size_t j=0;j<board[0].size();j++)
+    {
+        for(size_t i=0;i<board.size();i++)
+        {
+            int temp=board[i][j];
+            temp--;
+            if(numbers[temp]!=0)
+            return false;
+            numbers[temp]++;
+        }
+        for(size_t k=0;k<numbers.size();k++)
+        {
+            numbers[k]=0;
+        }
+    }
+    return true;
 }
 int main()
 {
