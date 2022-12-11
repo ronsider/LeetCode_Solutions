@@ -21,19 +21,27 @@ constexpr bool check_mini_grid(const array<array<int,3>,3>& grid)
 }
 
 //check for horizontal lines validity
-constexpr bool check_lines(const array<int,9>& line)
+constexpr bool check_lines(const array<array<int,9>,9>& board)
 {
     std::array<int,9>numbers{ 0,0,0,0,0,0,0,0,0 };
-    for(const auto& element:line)
+    for(const auto& element:board)
     {
-        int temp=element;
-        temp--;
-        if(numbers[temp]!=0)
-        return false;       
-        numbers[temp]++;
+        for(const auto& j:element)
+        {
+            int temp=j;
+            temp--;
+            if(numbers[temp]!=0)
+            return false;
+            numbers[temp]++;
+        }
+        for(size_t i=0;i<numbers.size();i++)
+        {
+            numbers[i]=0;
+        }
     }
     return true;
 }
+
 constexpr bool check_sudoku()
 {
 
