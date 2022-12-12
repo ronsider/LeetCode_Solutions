@@ -1,24 +1,125 @@
 #include <array>
 #include <algorithm>
+#include <bitset>
 using std::array;
 
- constexpr static std::array<int,9>numbers{1,2,3,4,5,6,7,8,9};
 
-constexpr bool check_mini_grid(const array<array<int,3>,3>& grid)
+bool check_mini_squares(const array<array<int,9>,9>& grid)
 {
-    std::array<int, 9>numbers{ 0,0,0,0,0,0,0,0,0 };
-    for (const auto& i : grid)
+    std::bitset<9>grid_one{"000000000"};
+    std::bitset<9>grid_two{"000000000"};
+    std::bitset<9>grid_three{"000000000"};
+    std::size_t position{};
+    for(int i=0;i<3;i++)
     {
-        for (const auto& j : i)
+        for(int j=0;j<grid[0].size();j++)
         {
-            int temp = j - 1;
-            if(numbers[temp]!=0)
+            if(j>=0&&j<3)
+            {
+                position=grid[i][j];
+                position--;
+                if(grid_one[position]==true)
                 return false;
-            numbers[temp]++;
+                grid_one[position]=true;
+                position=0;
+            }
+            else if(j>=3&&j<6)
+            {
+                position=grid[i][j];
+                position--;
+                if(grid_two[position]==true)
+                return false;
+                grid_two[position]=true;
+                position=0;
+            }
+            else
+            {
+                position=grid[i][j];
+                position--;
+                if(grid_three[position]==true)
+                return false;
+                grid_three[position]=true;
+                position=0;
+            }
         }
     }
-    return true;
+    grid_one.reset();
+    grid_two.reset();
+    grid_three.reset();
+
+    for(int i=3;i<6;i++)
+    {
+        for(int j=0;j<grid[0].size();j++)
+        {
+            if(j>=0&&j<3)
+            {
+                position=grid[i][j];
+                position--;
+                if(grid_one[position]==true)
+                return false;
+                grid_one[position]=true;
+                position=0;
+            }
+            else if(j>=3&&j<6)
+            {
+                position=grid[i][j];
+                position--;
+                if(grid_two[position]==true)
+                return false;
+                grid_two[position]=true;
+                position=0;
+            }
+            else
+            {
+                position=grid[i][j];
+                position--;
+                if(grid_three[position]==true)
+                return false;
+                grid_three[position]=true;
+                position=0;
+            }
+        }
+    }
+    grid_one.reset();
+    grid_two.reset();
+    grid_three.reset();
+
+    for(int i=6;i<9;i++)
+    {
+        for(int j=0;j<grid[0].size();j++)
+        {
+            if(j>=0&&j<3)
+            {
+                position=grid[i][j];
+                position--;
+                if(grid_one[position]==true)
+                return false;
+                grid_one[position]=true;
+                position=0;
+            }
+            else if(j>=3&&j<6)
+            {
+                position=grid[i][j];
+                position--;
+                if(grid_two[position]==true)
+                return false;
+                grid_two[position]=true;
+                position=0;
+            }
+            else
+            {
+                position=grid[i][j];
+                position--;
+                if(grid_three[position]==true)
+                return false;
+                grid_three[position]=true;
+                position=0;
+            }
+        }
+    }
+   return true;
 }
+
 
 //check for horizontal lines validity
 constexpr bool check_lines(const array<array<int,9>,9>& board)
