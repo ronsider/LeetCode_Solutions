@@ -15,4 +15,6 @@ def valid_columns(grid):
         if(len(st)!=9):
             return False    
     return True 
+
+    ##3
     
